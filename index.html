@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body onload="timer()">
+    
+   
+    <section id="slides" onmouseover="stop()" onmouseout="timerId = setTimeout(timer,2000);">
+
+     <div class="adress"><a id="idLink" href="https://yandex.by"><h2 id="urlAdress">yandex.by</h2></a></div>
+
+    
+    <img id="pic" src="images/img1b.jpg" alt="" />
+    
+    <div id="description">
+      <h3 id="head">Заголовок слайда</h3>
+      <p><b><a id="linkDesc" href="https://www.google.com">Вероятно вы заметили, что два метода, indexOf() и search(), очень похожи друг на друга. Они принимают одинаковые аргументы (параметры)...</b></a></p>
+    </div>
+    
+
+  <div id="before" onclick="previous()">
+      <span class="material-icons">
+        navigate_before
+        </span>
+    </div>
+    <div id="next" onclick="forward()">
+      <span class="material-icons">
+        navigate_next
+        </span>
+    </div>
+
+    </section>
+  
+
+<script src="js/slider.js"></script>
+
+</body>
+</html>
