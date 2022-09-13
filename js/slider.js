@@ -17,10 +17,10 @@ let desc = [
     "6.Обычно, строки JavaScript это примитивные значения, созданные при помощи литералов."
 ]
 
-let n = 1, max = 6;
+let n = 0, max = 6;
 
 function timer() {
-    if (n > max) n = 1;
+    if (++n > max) n = 1;
 
 idLink.href = links[n-1];
 linkDesc.href = links[n-1];
@@ -28,7 +28,7 @@ linkDesc.innerHTML = desc[n-1];
 urlAdress.innerHTML = links[n-1].substring(12);
 
 head.innerHTML = `Заголовок слайда №${n}`;
-pic.src = `images/img${n++}b.jpg`;
+pic.src = `images/img${n}b.jpg`;
 
 
 
@@ -42,7 +42,8 @@ function stop() {
 
 
 function forward() {
-    if (n > max) n=1;
+    if (n >= max) n=1;
+    else n++;
 head.innerHTML = `Заголовок слайда №${n}`;
 
 idLink.href = links[n-1];
@@ -51,22 +52,23 @@ linkDesc.innerHTML = desc[n-1];
 urlAdress.innerHTML = links[n-1].substring(12);
 
 
-pic.src = `images/img${n++}b.jpg`;
+pic.src = `images/img${n}b.jpg`;
 
 }
 
 function previous() {
-    if (n < 1 ) n = max;
+    if (n > 1 ) n--;
+    else n=max
 
 head.innerHTML = `Заголовок слайда №${n}`;
-pic.src = `images/img${n--}b.jpg`;
+pic.src = `images/img${n}b.jpg`;
 
 
 
-urlAdress.innerHTML = links[n+1].substring(12);
+urlAdress.innerHTML = links[n-1].substring(12);
 
-linkDesc.innerHTML = desc[n];
-linkDesc.href = links[n+1];
-idLink.href = links[n+1];
+linkDesc.innerHTML = desc[n-1];
+linkDesc.href = links[n-1];
+idLink.href = links[n-1];
 
 }
