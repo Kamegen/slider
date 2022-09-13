@@ -21,18 +21,8 @@ let n = 0, max = 6;
 
 function timer() {
     if (++n > max) n = 1;
-
-idLink.href = links[n-1];
-linkDesc.href = links[n-1];
-linkDesc.innerHTML = desc[n-1];
-urlAdress.innerHTML = links[n-1].substring(12);
-
-head.innerHTML = `Заголовок слайда №${n}`;
-pic.src = `images/img${n}b.jpg`;
-
-
-
-timerId = setTimeout(timer,2000);
+    changeSlide()
+    timerId = setTimeout(timer,2000);
 
 }
 
@@ -40,35 +30,26 @@ function stop() {
     clearTimeout(timerId);  
 }
 
-
 function forward() {
     if (n >= max) n=1;
     else n++;
-head.innerHTML = `Заголовок слайда №${n}`;
 
-idLink.href = links[n-1];
-linkDesc.href = links[n-1];
-linkDesc.innerHTML = desc[n-1];
-urlAdress.innerHTML = links[n-1].substring(12);
-
-
-pic.src = `images/img${n}b.jpg`;
-
+    changeSlide();
 }
 
 function previous() {
     if (n > 1 ) n--;
     else n=max
 
-head.innerHTML = `Заголовок слайда №${n}`;
-pic.src = `images/img${n}b.jpg`;
+    changeSlide();
+}
 
-
-
-urlAdress.innerHTML = links[n-1].substring(12);
-
-linkDesc.innerHTML = desc[n-1];
-linkDesc.href = links[n-1];
-idLink.href = links[n-1];
+function changeSlide() {
+    head.innerHTML = `Заголовок слайда №${n}`;
+    pic.src = `images/img${n}b.jpg`;
+    idLink.href = links[n-1];
+    linkDesc.href = links[n-1];
+    linkDesc.innerHTML = desc[n-1];
+    urlAdress.innerHTML = links[n-1].substring(12);
 
 }
